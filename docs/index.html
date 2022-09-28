@@ -110,7 +110,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["CDS Risk Hackathon"]},{"type":"character","attributes":{},"value":["Visualizing semantic accounts of risk perception\n\nLast update: Sep 28, 2022\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["CDS Risk Hackathon"]},{"type":"character","attributes":{},"value":["Visualizing semantic accounts of risk perception\n\nLast update: Sep 28, 2022\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["includes"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["in_header"]}},"value":[{"type":"character","attributes":{},"value":["header.html"]}]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2252,6 +2252,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   ul > li::marker {
       font-weight: 700;
       font-size: 1.125em;
+  }
+
+
+  .article-banner {
+    width: auto;
+    height: auto;
+    border: 0;
+  }
+
+  img[src="0_website/promo_photo.jpg"] {
+    border: 0;
+    padding: 0;
+    width: 100%;
+    margin: 100px 25px 0px 0px;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2419,6 +2433,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title></title>
+    </head>
+    <body>
+      <div class="article-header">
+        <img src="0_website/promo_photo.jpg" class="article-banner" alt="">
+      </div>
+      </a>
+    </body>
+  </html>
 
 
 </head>
@@ -2436,13 +2463,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
+<a class="logo" href="https://cds.unibas.ch">
+<img src="0_website/hex_logo.png" alt="Logo"/>
+</a>
 <a href="index.html" class="title">Risk Hackathon</a>
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
 <a href="hackathon.html">Hackathon</a>
+<a href="training.html">Training</a>
 <a href="data.html">Data</a>
 <a href="report.html">Report</a>
+<a href="contributors.html">Contributors</a>
 <a href="https://github.com/cdsbasel/risk">
 <i class="fab fa-github" aria-hidden="true"></i>
 </a>
@@ -2467,10 +2499,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>This is the home of the CDS Risk Hackathon taking place Fall 2022 (HS22).</p>
 <p>The project consists of a hackathon that utilizes data from the scientific outputs of Unibas researchers. More information about the <a href="hackathon.html">hackathon</a> and the associated <a href="data.html">data</a> will be updated in the respective pages. The results of the hackathon will be made available in the <a href="report.html">report</a>.</p>
 <p>Interested? Send us an email at <a href="mailto:cds-psych@unibas.ch">cds-psych@unibas.ch</a>!</p>
-<figure>
-<img src="0_website/promo_photo.jpg" alt="CDS Hackthon" />
-<figcaption aria-hidden="true">CDS Hackthon</figcaption>
-</figure>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

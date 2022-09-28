@@ -4,7 +4,10 @@ description: |
   Visualizing semantic accounts of risk perception
   
   Last update: `r format(Sys.time(), "%b %d, %Y")`
-site: distill::distill_website
+output: 
+  distill::distill_article:
+   includes:
+      in_header: header.html
 ---
 
 ```{r setup, include=FALSE}
@@ -18,4 +21,3 @@ The project consists of a hackathon that utilizes data from the scientific outpu
 
 Interested? Send us an email at [cds-psych@unibas.ch](mailto:cds-psych@unibas.ch)!
 
-![CDS Hackthon](0_website/promo_photo.jpg)

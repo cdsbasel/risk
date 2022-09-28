@@ -100,3 +100,17 @@ ul > li::marker {
     font-weight: 700;
     font-size: 1.125em;
 }
+
+
+.article-banner {
+  width: auto;
+  height: auto;
+  border: 0;
+}
+
+img[src="0_website/promo_photo.jpg"] {
+  border: 0;
+  padding: 0;
+  width: 100%;
+  margin: 100px 25px 0px 0px;
+}

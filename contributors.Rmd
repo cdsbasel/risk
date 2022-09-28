@@ -7,8 +7,9 @@ description: Meet the team
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-![CDS Hackthon](0_website/promo_photo.jpg)
-
 ### Contributors
 
 [CDS team members](https://psychologie.unibas.ch/de/fakultaet/abteilungen/cognitive-and-decision-sciences-305/team/)
+
+![CDS team members](0_website/cds_greenscreen.png)
+

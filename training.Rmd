@@ -12,11 +12,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## R Training Workshop
 
-This year, CDS will be offering a R training workshop for students attending the hackathon. Any BSc or MSc students at the Faculty of Psychology planning to join the hackathon are very welcome to this training session! Further details will soon be added on this page. Please indicate your interest by writing to [cds-psych@unibas.ch](mailto:cds-psych@unibas.ch).
+This year, CDS will be offering a R training workshop for students attending the hackathon. BSc or MSc students at the Faculty of Psychology planning to join the hackathon are very welcome to this training session! Further details will soon be added on this page. Please indicate your interest by writing to [cds-psych@unibas.ch](mailto:cds-psych@unibas.ch).
 
 Together, we will look at some of the functions and plots that will be most useful for the hackathon. 
 
-If you are new to R or need a refresher, we recommend you to go through the topics in [R Training Website for CDS MSc Students](https://cdsbasel.github.io/rtraining/), where we have compiled different online materials on basic R skills. 
+If you are new to R or need a refresher, we recommend you to go through the topics in [R Training Website for CDS MSc Students](https://cdsbasel.github.io/rtraining/), where we have compiled different online materials for basic R skills. 
 
 <aside>
 Topics 2 and 7-10 will especially come in handy!
