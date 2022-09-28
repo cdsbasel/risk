@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 The Center for Cognitive and Decision Sciences (CDS) coordinates collaborative projects involving CDS members and MSc students associated with the center as part of its mission to provide training in data analytics (see [cds.unibas.ch](www.cds.unibas.ch) for more information).
 
-The project will consist of a series of planning [sessions]((https://psychologie.unibas.ch/de/fakultaet/abteilungen/cognitive-and-decision-sciences-305/events/)) and multiple collaborative [hackathons](hackathon.html). Resources related to the hackathons will be available our Github repository.
+The project will consist of a series of planning [sessions]((https://psychologie.unibas.ch/de/fakultaet/abteilungen/cognitive-and-decision-sciences-305/events/)) and multiple collaborative [hackathons](hackathon.html). Resources related to the hackathons will be available our [Github repository](https://github.com/cdsbasel/risk).
 
 ## Hackathons 
 

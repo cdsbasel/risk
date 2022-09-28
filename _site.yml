@@ -13,4 +13,8 @@ navbar:
       href: data.html
     - text: "Report"
       href: report.html
-output: distill::distill_article
+    - icon: fab fa-github
+      href: https://github.com/cdsbasel/risk
+output: 
+  distill::distill_article:
+    toc: true

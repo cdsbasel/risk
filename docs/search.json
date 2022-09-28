@@ -6,23 +6,23 @@
       "description": "Overview of the data and preprocessing steps\n\nAdditional details to be added soon!",
       "author": [],
       "contents": "\r\nData and Preprocessing\r\nWe will use data from Zak Hussains’s project Semantic Accounts of Risk Perception, a doctoral researcher at CDS.\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-09-28T14:24:34+02:00"
+      "last_modified": "2022-09-28T15:16:10+02:00"
     },
     {
       "path": "hackathon.html",
       "title": "Hackathon",
       "description": "A training opportunity in data analytics\n\nAdditional details to be added soon!",
       "author": [],
-      "contents": "\r\nSet Up\r\nThe Center for Cognitive and Decision Sciences (CDS) coordinates collaborative projects involving CDS members and MSc students associated with the center as part of its mission to provide training in data analytics (see cds.unibas.ch for more information).\r\nThe project will consist of a series of planning sessions and multiple collaborative hackathons. Resources related to the hackathons will be available our Github repository.\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-09-27T17:33:51+02:00"
+      "contents": "\r\n\r\nContents\r\nSet Up\r\nHackathons\r\nPart I - Creating a Data Story (November 16th, 2022)\r\nPart II - Group Feedback (November 22th, 2022)\r\nPart III - Group Feedback and Reflection (December 6th, 2022)\r\n\r\n\r\nSet Up\r\nThe Center for Cognitive and Decision Sciences (CDS) coordinates collaborative projects involving CDS members and MSc students associated with the center as part of its mission to provide training in data analytics (see cds.unibas.ch for more information).\r\nThe project will consist of a series of planning sessions and multiple collaborative hackathons. Resources related to the hackathons will be available our Github repository.\r\nHackathons\r\nPart I - Creating a Data Story (November 16th, 2022)\r\nPart II - Group Feedback (November 22th, 2022)\r\nPart III - Group Feedback and Reflection (December 6th, 2022)\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-09-28T15:16:15+02:00"
     },
     {
       "path": "index.html",
       "title": "CDS Risk Hackathon",
-      "description": "Visualizing Risk at the University of Basel\n\nLast update: `r format(Sys.time(), \"%b %d, %Y\")`\n",
+      "description": "Visualizing semantic accounts of risk perception\n\nLast update: `r format(Sys.time(), \"%b %d, %Y\")`\n",
       "author": [],
-      "contents": "\r\nThis is the home of the CDS Risk Hackathon taking place Fall 2022 (HS22).\r\nThe project consists of a hackathon that utilizes data from the scientific outputs of Unibas researchers. More information about the hackathon and the associated data will be updated in the respective pages. The results of the hackathon will be made available in the report.\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-09-27T17:24:25+02:00"
+      "contents": "\r\nThis is the home of the CDS Risk Hackathon taking place Fall 2022 (HS22).\r\nThe project consists of a hackathon that utilizes data from the scientific outputs of Unibas researchers. More information about the hackathon and the associated data will be updated in the respective pages. The results of the hackathon will be made available in the report.\r\nInterested? Send us an email at cds-psych@unibas.ch!\r\nCDS Hackthon\r\n\r\n\r\n",
+      "last_modified": "2022-09-28T15:16:20+02:00"
     },
     {
       "path": "report.html",
@@ -30,7 +30,15 @@
       "description": "Visualizing semantic accounts of risk perceptions\n\nResults of our Hackathon will be added here.",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-09-28T14:23:31+02:00"
+      "last_modified": "2022-09-28T15:16:24+02:00"
+    },
+    {
+      "path": "training.html",
+      "title": "R Training",
+      "description": "Preparing for the hackathon\n\nAddiitonal details to be added soon!",
+      "author": [],
+      "contents": "\r\n\r\nContents\r\nR Training Workshop\r\n\r\nR Training Workshop\r\nThis year, CDS will be offering a R training workshop for students attending the hackathon. Any BSc or MSc students at the Faculty of Psychology planning to join the hackathon are very welcome to this training session! Further details will soon be added on this page. Please indicate your interest by writing to cds-psych@unibas.ch.\r\nTogether, we will look at some of the functions and plots that will be most useful for the hackathon.\r\nIf you are new to R or need a refresher, we recommend you to go through the topics in R Training Website for CDS MSc Students, where we have compiled different online materials on basic R skills.\r\n\r\nTopics 2 and 7-10 will especially come in handy!\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-09-28T15:16:33+02:00"
     }
   ],
   "collections": []

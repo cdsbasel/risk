@@ -1,7 +1,7 @@
 ---
 title: "CDS Risk Hackathon"
 description: |
-  Visualizing Risk at the University of Basel
+  Visualizing semantic accounts of risk perception
   
   Last update: `r format(Sys.time(), "%b %d, %Y")`
 site: distill::distill_website
@@ -15,3 +15,7 @@ knitr::opts_chunk$set(echo = FALSE)
 This is the home of the CDS Risk Hackathon taking place Fall 2022 (HS22).
 
 The project consists of a hackathon that utilizes data from the scientific outputs of Unibas researchers. More information about the [hackathon](hackathon.html) and the associated [data](data.html) will be updated in the respective pages. The results of the hackathon will be made available in the [report](report.html).
+
+Interested? Send us an email at [cds-psych@unibas.ch](mailto:cds-psych@unibas.ch)!
+
+![CDS Hackthon](0_website/promo_photo.jpg)
