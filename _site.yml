@@ -4,17 +4,25 @@ description: |
   Risk Hackathon
 output_dir: "docs"
 navbar:
+  logo:
+    image: 0_website/hex_logo.png
+    href: https://cds.unibas.ch
   right:
     - text: "Home"
       href: index.html
     - text: "Hackathon"
       href: hackathon.html
+    - text: "Training"
+      href: training.html
     - text: "Data"
       href: data.html
     - text: "Report"
       href: report.html
+    - text: "Contributors"
+      href: contributors.html
     - icon: fab fa-github
       href: https://github.com/cdsbasel/risk
 output: 
   distill::distill_article:
     toc: true
+    theme: styles.css
