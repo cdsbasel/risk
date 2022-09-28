@@ -1,0 +1,27 @@
+---
+title: "Hackathon"
+description: |
+  A training opportunity in data analytics
+  
+  Additional details to be added soon!
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Set Up
+
+The Center for Cognitive and Decision Sciences (CDS) coordinates collaborative projects involving CDS members and MSc students associated with the center as part of its mission to provide training in data analytics (see [cds.unibas.ch](www.cds.unibas.ch) for more information).
+
+The project will consist of a series of planning [sessions]((https://psychologie.unibas.ch/de/fakultaet/abteilungen/cognitive-and-decision-sciences-305/events/)) and multiple collaborative [hackathons](hackathon.html). Resources related to the hackathons will be available our Github repository.
+
+## Hackathons 
+
+### Part I - Creating a Data Story (November 16th, 2022)
+
+
+### Part II - Group Feedback (November 22th, 2022)
+
+
+### Part III - Group Feedback and Reflection (December 6th, 2022)

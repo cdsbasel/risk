@@ -1,20 +1,36 @@
 {
   "articles": [
     {
-      "path": "about.html",
-      "title": "About this site",
-      "description": "Some additional details about the website",
+      "path": "data.html",
+      "title": "Data",
+      "description": "Overview of the data and preprocessing steps\n\nAdditional details to be added soon!",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-09-26T17:42:33+02:00"
+      "contents": "\r\nData and Preprocessing\r\nWe will use data from Zak Hussains’s project Semantic Accounts of Risk Perception, a doctoral researcher at CDS.\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-09-28T14:24:34+02:00"
+    },
+    {
+      "path": "hackathon.html",
+      "title": "Hackathon",
+      "description": "A training opportunity in data analytics\n\nAdditional details to be added soon!",
+      "author": [],
+      "contents": "\r\nSet Up\r\nThe Center for Cognitive and Decision Sciences (CDS) coordinates collaborative projects involving CDS members and MSc students associated with the center as part of its mission to provide training in data analytics (see cds.unibas.ch for more information).\r\nThe project will consist of a series of planning sessions and multiple collaborative hackathons. Resources related to the hackathons will be available our Github repository.\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-09-27T17:33:51+02:00"
     },
     {
       "path": "index.html",
-      "title": "Risk Hackathon",
-      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "title": "CDS Risk Hackathon",
+      "description": "Visualizing Risk at the University of Basel\n\nLast update: `r format(Sys.time(), \"%b %d, %Y\")`\n",
+      "author": [],
+      "contents": "\r\nThis is the home of the CDS Risk Hackathon taking place Fall 2022 (HS22).\r\nThe project consists of a hackathon that utilizes data from the scientific outputs of Unibas researchers. More information about the hackathon and the associated data will be updated in the respective pages. The results of the hackathon will be made available in the report.\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-09-27T17:24:25+02:00"
+    },
+    {
+      "path": "report.html",
+      "title": "Report",
+      "description": "Visualizing semantic accounts of risk perceptions\n\nResults of our Hackathon will be added here.",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-09-26T17:42:35+02:00"
+      "last_modified": "2022-09-28T14:23:31+02:00"
     }
   ],
   "collections": []

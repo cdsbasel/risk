@@ -1,18 +1,17 @@
 ---
-title: "Risk Hackathon"
+title: "CDS Risk Hackathon"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  Visualizing Risk at the University of Basel
+  
+  Last update: `r format(Sys.time(), "%b %d, %Y")`
 site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
 ```
 
+This is the home of the CDS Risk Hackathon taking place Fall 2022 (HS22).
+
+The project consists of a hackathon that utilizes data from the scientific outputs of Unibas researchers. More information about the [hackathon](hackathon.html) and the associated [data](data.html) will be updated in the respective pages. The results of the hackathon will be made available in the [report](report.html).

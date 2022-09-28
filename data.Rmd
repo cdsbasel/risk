@@ -1,0 +1,15 @@
+---
+title: "Data"
+description: |
+  Overview of the data and preprocessing steps
+  
+  Additional details to be added soon!
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+#### Data and Preprocessing
+
+We will use data from Zak Hussains's project **Semantic Accounts of Risk Perception**, a doctoral researcher at CDS.
