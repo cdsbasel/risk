@@ -101,6 +101,7 @@ ul > li::marker {
     font-size: 1.125em;
 }
 
+/*-- Custom style to add banner photo --*/
 
 .article-banner {
   width: auto;
