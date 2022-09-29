@@ -109,9 +109,9 @@ ul > li::marker {
   border: 0;
 }
 
-img[src="0_website/promo_photo.jpg"] {
+img[src="0_website/promo_photo.png"] {
   border: 0;
   padding: 0;
   width: 100%;
-  margin: 100px 25px 0px 0px;
+  margin: 80px 0px 0px 0px;
 }
