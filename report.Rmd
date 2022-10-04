@@ -10,7 +10,15 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ``` 
 
+## Report
 
+Here we will add the results of our hackathon. 
+
+For an example of reports, check out some of our past hackathons:
+
+https://cdsbasel.github.io/SDG_hackathon/report.html
+
+https://cdsbasel.github.io/Diversity_hackathon/report.html
 
 
 

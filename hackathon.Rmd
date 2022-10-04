@@ -10,18 +10,10 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Set Up
+## Process
 
-The Center for Cognitive and Decision Sciences (CDS) coordinates collaborative projects involving CDS members and MSc students associated with the center as part of its mission to provide training in data analytics (see [www.cds.unibas.ch](https://psychologie.unibas.ch/de/fakultaet/abteilungen/cognitive-and-decision-sciences-305/) for more information).
+In the group hackathon (13:00-18:00), we will be using data visualization **to understand how people perceive all sorts of technological and societal risks**, from nuclear energy to climate change! Participants will work in small groups of three to five people to produce stunning data visualizations using information on risk perception related to numerous risk sources.
 
-The project will consist of a series of planning [sessions](https://psychologie.unibas.ch/de/fakultaet/abteilungen/cognitive-and-decision-sciences-305/events/) and multiple collaborative hackathons. Resources related to the hackathons will be available our [Github repository](https://github.com/cdsbasel/risk).
+## Data
 
-## Hackathons 
-
-### Part I - Creating a Data Story (November 16th, 2022)
-
-
-### Part II - Group Feedback (November 22th, 2022)
-
-
-### Part III - Group Feedback and Reflection (December 6th, 2022)
+We will use data from the project **Semantic Accounts of Risk Perception** (Zak Hussain, Doctoral student at CDS). 

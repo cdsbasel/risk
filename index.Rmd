@@ -6,7 +6,8 @@ description: |
   Last update: `r format(Sys.time(), "%b %d, %Y")`
 output: 
   distill::distill_article:
-   includes:
+    md_extensions: +emoji
+    includes:
       in_header: header.html
 ---
 
@@ -15,9 +16,30 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-This is the home of the CDS Risk Hackathon taking place Fall 2022 (HS22).
+This is the home of the **Risk Hackathon** taking place on **November 16th, 2022**.
 
-The project consists of a hackathon that utilizes data from the scientific outputs of Unibas researchers. More information about the [hackathon](hackathon.html) and the associated [data](data.html) will be updated in the respective pages. The results of the hackathon will be made available in the [report](report.html).
+The **Center for Cognitive and Decision Sciences (CDS)** coordinates collaborative projects involving students and researchers from the Faculty of Psychology as part of its mission to provide training in data analytics (see [www.cds.unibas.ch](https://psychologie.unibas.ch/de/fakultaet/abteilungen/cognitive-and-decision-sciences-305/) for more information).
 
-Interested? Send us an email at [cds-psych@unibas.ch](mailto:cds-psych@unibas.ch)!
+The hackathon will feature a **group [hackathon](hackathon.html) in the afternoon**, as well as an **optional [training class](training.html) in the morning**. Participants are also welcome to join our get-together in the evening :beer:! In the hackathon, participants will work in small groups of three to five people to produce stunning data visualizations using information on **risk perception** related to numerous risk sources. Participants will get practical knowledge of wrangling data and designing attractive data visualizations in R. The results of the hackathon will be made available in the [report](report.html).
 
+<aside>
+Want to get in touch? Send us an email at [cds-psych@unibas.ch](mailto:cds-psych@unibas.ch)!
+</aside>
+
+
+## Schedule (November 16th, 2022)
+
+### Training (9:00-12:00) - Building a Foundation in R and Data Visualization
+
+Please check out the [training](training.html) page for more information.
+
+### Hackathon (13:00-18:00) - Creating a Data Story
+
+Please check out the [hackathon](hackathon.html) page for more information.
+
+
+## Registration
+
+Feel free to participate regardless of your level since participants get the chance to work in small groups with various coding and data visualization skills! 
+
+**Registration will be open from October 17th till November 7th via this [link](https://forms.gle/4xATFZiGKfQoDNZK8).**
