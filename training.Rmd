@@ -16,7 +16,7 @@ This year, CDS will be offering a R training workshop for students attending the
 
 Together, we will look at some of the functions and plots that will be most useful for the hackathon. 
 
-If you are new to R or need a refresher, we recommend you to go through the topics in [R Training Website for CDS MSc Students](https://cdsbasel.github.io/rtraining/), where we have compiled different online materials for basic R skills. 
+If you are new to R or need a refresher, we recommend you to go through the topics in [R Training Website for CDS Students](https://cdsbasel.github.io/rtraining/), where we have compiled different online materials for basic R skills. 
 
 <aside>
 Topics 2 and 7-10 will especially come in handy!
