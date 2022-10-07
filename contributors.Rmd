@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### Contributors
 
-The CDS Risk Hackathon is a group effort organized by all [CDS team members](https://psychologie.unibas.ch/de/fakultaet/abteilungen/cognitive-and-decision-sciences-305/team/).
+The CDS Risk Hackathon is a team effort organized by [CDS members](https://psychologie.unibas.ch/de/fakultaet/abteilungen/cognitive-and-decision-sciences-305/team/).
 
 ![CDS team members](0_website/cds_greenscreen.png)
 

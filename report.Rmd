@@ -1,7 +1,7 @@
 ---
 title: "Report"
 description: |
-  Visualizing semantic accounts of risk perceptions
+  Using data visualization to understand risk perception
   
   Results of our Hackathon will be added here.
 ---
@@ -12,13 +12,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Report
 
-Here we will add the results of our hackathon. 
+We will report the results of our hackathon on this page. Click the images below for examples of reports resulting from past CDS hackathons:
 
-For an example of reports, check out some of our past hackathons:
+<a href="https://cdsbasel.github.io/SDG_hackathon/report.html">
+  <img alt="Qries" src="0_website/sdg.png"
+  width=380" height="500">
+</a>
 
-https://cdsbasel.github.io/SDG_hackathon/report.html
-
-https://cdsbasel.github.io/Diversity_hackathon/report.html
-
-
-
+<a href="https://cdsbasel.github.io/Diversity_hackathon/report.html">
+  <img alt="Qries" src="0_website/diversity.png"
+  width=380" height="500">
+</a>
