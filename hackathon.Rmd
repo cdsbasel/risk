@@ -16,4 +16,4 @@ In the group hackathon (13:00-18:00), we will be using data visualization **to u
 
 ## Data
 
-We will use data from the project **Semantic Accounts of Risk Perception** (Zak Hussain, Doctoral student at CDS). 
+We will use data from an ongoing project by [Zak Hussain](https://psychologie.unibas.ch/en/persons/zakir-hussain/about-me/), [Dirk Wulff](https://dwulff.github.io/about/), and [Rui Mata](https://matarui.org) that will be made publicly available shortly before the hackathon. 
