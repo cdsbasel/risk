@@ -14,58 +14,37 @@ knitr::opts_chunk$set(echo = FALSE)
 
 We will use data from the project **Semantic Accounts of Risk Perception** (Zak Hussain, Doctoral student at CDS).
 
-#### Data and Preprocessing
-
-We use data from a database listing the University of Basel's research output between 2000 and 2020. The original database is composed of a total 67'269 publications including several different categories: 43'997 journal articles, 11'959 book chapters, 3'454 books (edited and authored), 2'014 proceedings articles, 1'671 theses, and 4'174 other items including news articles and discussion papers. We found that a number of publications were repeated and removed these so we end up with a total of 64'268 publications.   
-
-In addition, we use data from the [Equal opportunities monitoring](https://www.unibas.ch/en/University/Administration-Services/Vice-President-s-Office-for-People-and-Culture/Diversity-and-Inclusion/Diversity/Diversity-Management/Monitoring.html) concerning the percentage of females in different positions (i.e., professorships, academic staff) available for the period 2013-2019. 
-
-<i>Diversity Dimensions</i>
-
-We use information concerning diversity derived from the authors' first names. 
-
-We recruit the services [genderize.io](https://genderize.io/), [agify.io](https://agify.io/), [nationalize.io](https://nationalize.io/) to determine the authors' probable gender, age, and nation, respectively. Estimates are provided based on the services' databases that include hundreds of thousands of confirmed mappings on the internet between first names and these three characteristics. In addition to probable categories, the services return information on confidence. For instance, for the name Alexandra, agify.io informs that 98% of 122'985 gender records point to a female gender, that the probable age is 27 based on 114,238 age records, and that there is a 11.7% probability that the nation is Romania, a 5.1% probability that the nation is Ecuador, and a 4.5% probability that the nation is Portugal.  
-
-You can use the links above to try out the three services for yourself.  
-
-```{html}
-https://api.genderize.io/?name=Samuel
-https://agify.io?name=Samuel
-https://api.nationalize.io/?name=Samuel
-```
-
-We have processed the data in the following way to simplify our analysis. For gender and age, we only use the probable value, irrespective of the number of instances or the assigned probability. For nation, we determine whether any of the three most probable nations include a "western" nation defined as geographic Europe, the US, Canada, New Zealand, and Australia. Additional checking of names suggested that this categorization of nationality is suboptimal and we refrain to present results concerning this dimension in our report. 
-
-<i>Organizational Units</i>
-
-In a previous project, CDS members identified faculty-level organizational units within the University of Basel (including associated and cross-disciplinary institutes) manually, using the [descriptors](https://edoc.unibas.ch/view/divisions/) in use at the University of Basel in 2021. 
-
-The data is shared via this <a href="https://github.com/cdsbasel/Diversity_hackathon"><b>Github</b></a> repository. 
-
 #### Variables
 
 | Variable | Description |
 |:-------------|:-------------------------------------|
-| `author` | List of authors. |
-| `year` | Year of publication. |
-| `title` | Title of publication. |   
-| `organization` | Original list of Unibas organizations involved in publication. |
-| `unibas` | Publication offically affiliated with University of Basel. |
-| `category` | Category of publication: Journal, Chapter, Book, Thesis, Proceedings, Other. |
-| `n_authors` | Number of authors |
-| `gender_proportion` | Proportion of female authors. |
-| `gender_first` | Is first author female: 1 = yes, 0 = no. |
-| `gender_middle` |  Proportion of female authors excluding first and last author, where available. |
-| `gender_last` | Is last author female: 1 = yes, 0 = no. |
-| `gender_diversity` | measure of gender dispersion  |
-| `age_average` | Average age of authors. |
-| `age_first` | Age of first author. |
-| `age_middle` |  Average age of authors excluding first and last author, where available. |
-| `age_last` | Age of last author. |
-| `age_diversity` | measure of age dispersion |
-| `nation_proportion` | Proportion of western authors. |
-| `nation_first` | Is first author western: 1 = yes, 0 = no. |
-| `nation_middle` |  Proportion of western authors excluding first and last author, where available. |
-| `nation_last` | Is last author western: 1 = yes, 0 = no. |
-| `nation_diversity` | measure of nationality dispersion |
+| `word` | Around 12K words contained in the intersection of the GloVe and SWOW vocabulary. |
+| `in_Fisch` | Boolean indicating whether the word is contained in Fischhoff et al. (1978). |
+| `risk_rating` | Mean of participant risk ratings given to each word on a scale of -100 (safe) to +100 (risky) |   
+| `psych_pred_risk` | Predicted riskiness of each word according to 9 psychometric dimensions (see below) |
+
+**Psychometric Model**
+The following are mean responses given on 7-point likert scale to the associated questions.
+| `psych_voluntary` | Are individuals exposed to this risk voluntarily or involuntarily?  |
+| `psych_fatal` | How fatal are the consequences of this risk? |
+| `psych_immediate` | Is death from this risk immediate or delayed? |
+| `psych_dread` | Is this a risk that individuals can reason about calmly or is it one that they have great dread for? |
+| `psych_catastrophic` | Is this a risk that kills one person at a time (chronic) or a risk that kills large numbers of people at once (catastrophic)? |
+| `psych_controllable` |  Is this risk controllable or uncontrollable for the individual exposed to this risk? |
+| `psych_known_sci` | Is this risk known or unknown to science,Is this risk known or unknown to the individuals exposed to this risk? |
+| `psych_known` | measure of gender dispersion  |
+| `psych_new` | Is this risk new or old? |
+
+**Semnantic Models**
+The following are predictions from (i) SWOW and (ii) GloVe - semantic (embedding) models respectively trained on (i) free association and (ii) online text data. In addition to predicting the risk ratings, they predict the 9 psychometric dimensions listed above. 
+| `[glove/swow]_pred_risk` | 
+| `[glove/swow]_pred_voluntary` | 
+| `[glove/swow]_pred_fatal` |
+| `[glove/swow]_pred_immediate` | 
+| `[glove/swow]_pred_dread` |
+| `[glove/swow]_pred_catastrophic` |
+| `[glove/swow]_pred_controllable` |  
+| `[glove/swow]_pred_known_sci` | 
+| `[glove/swow]_pred_known` | 
+| `[glove/swow]_pred_new` | 
 | `Org-*` | Logical vectors indicating Unibas faculty-level organizations involved in publication. 
