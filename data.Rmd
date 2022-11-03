@@ -24,7 +24,7 @@ We will use data from the project **Semantic Accounts of Risk Perception** (Zak 
 | `psych_pred_risk` | Predicted riskiness of each word according to 9 psychometric dimensions (see below) |
 
 **Psychometric Model**
-The following are mean responses given on 7-point likert scale to the associated questions.
+The following are mean responses given on 7-point likert scale to the associated questions:
 | `psych_voluntary` | Are individuals exposed to this risk voluntarily or involuntarily?  |
 | `psych_fatal` | How fatal are the consequences of this risk? |
 | `psych_immediate` | Is death from this risk immediate or delayed? |
@@ -34,6 +34,8 @@ The following are mean responses given on 7-point likert scale to the associated
 | `psych_known_sci` | Is this risk known or unknown to science,Is this risk known or unknown to the individuals exposed to this risk? |
 | `psych_known` | measure of gender dispersion  |
 | `psych_new` | Is this risk new or old? |
+
+*| 'psych_pc[1-9]' | 9 principle components obtained via principle component anlaysis of the above psychometric dimensions |
 
 **Semnantic Models**
 The following are predictions from (i) SWOW and (ii) GloVe - semantic (embedding) models respectively trained on (i) free association and (ii) online text data. In addition to predicting the risk ratings, they predict the 9 psychometric dimensions listed above. 
@@ -47,4 +49,5 @@ The following are predictions from (i) SWOW and (ii) GloVe - semantic (embedding
 | `[glove/swow]_pred_known_sci` | 
 | `[glove/swow]_pred_known` | 
 | `[glove/swow]_pred_new` | 
-| `Org-*` | Logical vectors indicating Unibas faculty-level organizations involved in publication. 
+
+*| '[glove/swow]_pc[1-9]' | 9 principle components obtained via principle component anlaysis of the above semantic dimensions for each semantic model |
