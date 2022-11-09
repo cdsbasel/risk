@@ -25,15 +25,15 @@ We will use data from the project **Semantic Accounts of Risk Perception** (Zak 
 
 **Psychometric Model**
 The following are mean responses given on 7-point likert scale to the associated questions:
-| `psych_voluntary` | Are individuals exposed to this risk voluntarily or involuntarily?  |
-| `psych_fatal` | How fatal are the consequences of this risk? |
-| `psych_immediate` | Is death from this risk immediate or delayed? |
-| `psych_dread` | Is this a risk that individuals can reason about calmly or is it one that they have great dread for? |
-| `psych_catastrophic` | Is this a risk that kills one person at a time (chronic) or a risk that kills large numbers of people at once (catastrophic)? |
-| `psych_controllable` |  Is this risk controllable or uncontrollable for the individual exposed to this risk? |
-| `psych_known_sci` | Is this risk known or unknown to science,Is this risk known or unknown to the individuals exposed to this risk? |
-| `psych_known` | measure of gender dispersion  |
-| `psych_new` | Is this risk new or old? |
+| `psych_voluntary` | Are individuals exposed to this risk voluntarily or involuntarily? (1=voluntary, 7=involuntary) |
+| `psych_fatal` | How fatal are the consequences of this risk? (1=not-fatal, 7=fatal) |
+| `psych_immediate` | Is death from this risk immediate or delayed? (1=immediate, 7=delayed) |
+| `psych_dread` | Is this a risk that individuals can reason about calmly or is it one that they have great dread for? (1=calm, 7=dread) |
+| `psych_catastrophic` | Is this a risk that kills one person at a time (chronic) or a risk that kills large numbers of people at once (catastrophic)? (1=chronic, 7=catastrophic) |
+| `psych_controllable` |  Is this risk controllable or uncontrollable for the individual exposed to this risk? (1=controllable, 7=uncontrollable) |
+| `psych_known_sci` | Is this risk known or unknown to science,Is this risk known or unknown to the individuals exposed to this risk? (1=Known, 7=Unknown)|
+| `psych_known` | Is this risk known or unkown to the individuals exposed to this risk? (1=known, 7=unkown) |
+| `psych_new` | Is this risk new or old? (1=new, 7=old) |
 
 *| 'psych_pc[1-9]' | 9 principle components obtained via principle component anlaysis of the above psychometric dimensions |
 
