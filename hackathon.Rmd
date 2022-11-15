@@ -1,29 +1,41 @@
 ---
-title: "Hackathon"
+title: "Risk Hackathon"
 description: |
   A training opportunity in data analytics
-  
-  Additional details to be added soon!
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-In the group hackathon (13:00-18:00), we will be using data visualization **to understand how people perceive all sorts of technological and societal risks**, from nuclear energy to climate change! Participants will work in small groups of three to five people to produce stunning data visualizations using information on risk perception related to numerous risk sources.
+## Hackathon
+
+The group hackathon aims to use data visualization **to understand how people perceive technological and societal risks**, from nuclear power to artificial intelligence! 
+
+Participants will work in small groups of 4 to 5 people to produce data visualizations with the goal of understanding risk perception, in particular, exploring the potential of novel semantic models to predict risk perception and how well these fare relatively to the classic psychometric model (cf. [Fischhoff et al., 1978](https://link.springer.com/article/10.1007/BF00143739)).
+
+In what follows, we first provide an overview of the available data, and, second, provide a set of tasks that the groups are asked to complete. The tasks have been designed to offer both an overview of the data as well as a training opportunity in data wrangling and data visualization using R. Each group can, in addition, and time permitting, use the data set to create additional visualizations or analyses that can shed light on the topic of risk perception - the sky is the limit!
 
 ## Data
 
-We will use data from an ongoing project by [Zak Hussain](https://www.linkedin.com/in/zakir-a-s-hussain/), [Dirk Wulff](https://dwulff.github.io/about/), and [Rui Mata](https://matarui.org) that will be made publicly available shortly before the hackathon. 
+We will use data from an ongoing project by [Zak Hussain](https://www.linkedin.com/in/zakir-a-s-hussain/), [Dirk Wulff](https://dwulff.github.io/about/), and [Rui Mata](https://matarui.org) that aimed to create the largest data set concerning risk perception to date so as to test novel semantic models of risk perception. 
+
+The project stems from a pre-registered [study](https://osf.io/6m7xr) conducted in 2022. The table below provides an overview of pre-processed data stemming from the study that is made available for the purposes of the hackathon. You can find a link to the data [here](0_website/data.csv/).
+
+**Risks and Risk Ratings**
 
 | Variable | Description |
 |:-------------|:-------------------------------------|
-| `word` | Around 12K words contained in the intersection of the GloVe and SWOW vocabulary. |
-| `cluster` | The group to which each word has been allocated by a clustering algorithm. |
-| `risk_rating` | Mean of participant risk ratings given to each word on a scale of -100 (safe) to +100 (risky) |
+| `word` | 1004 risks for which Hussain et al. obtained risk ratings from an online survey.|
+| `cluster` | A categorization of each word/risk into different categories (e.g., Activities/Technologies, Transportation). The clustering was performed using free association data using a standard clustering algorithm. |
+| `risk_rating` | Mean of participant risk ratings given to each word on a scale of -100 (safe) to +100 (risky). |
 
 **Psychometric Model**
-The following are mean responses given on 7-point likert scale to the associated questions:
+
+The following variables represent mean responses given on 7-point likert scale to the associated questions in the online survey:
+
+| Variable | Description |
+|:-------------|:-------------------------------------|
 | `psych_voluntary` | Are individuals exposed to this risk voluntarily or involuntarily? (1=voluntary, 7=involuntary) |
 | `psych_fatal` | How fatal are the consequences of this risk? (1=not-fatal, 7=fatal) |
 | `psych_immediate` | Is death from this risk immediate or delayed? (1=immediate, 7=delayed) |
@@ -33,17 +45,28 @@ The following are mean responses given on 7-point likert scale to the associated
 | `psych_known_sci` | Is this risk known or unknown to science,Is this risk known or unknown to the individuals exposed to this risk? (1=Known, 7=Unknown)|
 | `psych_known` | Is this risk known or unkown to the individuals exposed to this risk? (1=known, 7=unkown) |
 | `psych_new` | Is this risk new or old? (1=new, 7=old) |
-
-*| 'psych_pc[1-9]' | 9 principle components obtained via principle component anlaysis of the above psychometric dimensions |
-
+| 'psych_pc[1-9]' | 9 principle components obtained via principle component analysis of the above psychometric dimensions |
 | `in_Fisch` | Boolean indicating whether the word is contained in Fischhoff et al. (1978). |
-
 | `psych_pred_risk` | Predicted riskiness of each word according to 9 psychometric dimensions (above) |
 
-**Semnantic Models**
-The following are predictions from (i) SWOW and (ii) GloVe - semantic (embedding) models respectively trained on (i) free association and (ii) online text data. In addition to predicting the risk ratings, they predict the 9 psychometric dimensions listed above. 
-| `[glove/swow]_pred_risk` | 
+**Semantic Models**
+
+The following are predictions from GloVe and SWOW semantic models that were trained on online text or free association data, respectively. 
+
+| Variable | Description |
+|:-------------|:-------------------------------------|
+| `glove_pred_risk` | Predicted riskiness of each word according to an embeddings model trained on online text data (GloVe) |  
+| `swow_pred_risk` | Predicted riskiness of each word according to an embeddings model trained on free association data (SWOW) | 
 
 ## Tasks
 
+1. The first task should be for you to get some intuitive understanding of the distribution of ratings and the associated psychometric dimensions. To what extent do different categories of risks (e.g., techonolgical, transportation, health) are perceived as differently risky? Consider using visualization of distributions, for example, using density plots. 
 
+2. To what extent do the risk perception results match the classic findings on risk perception? Does a two-dimensional visual representation of risks match well the patterns by Fischhoff et al. (1978)?
+
+<a href="https://link.springer.com/article/10.1007/BF00143739">
+  <img alt="Qries" src="0_website/Fischoff.png"
+  width=700" height="500">
+</a>
+
+3. How well does the psychometric paradigm capture risk perception and how do the semantic models fare in comparison? Consider using scatter plots to examine the correlations between model predictions.

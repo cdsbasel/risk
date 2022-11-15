@@ -87,29 +87,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Risk Hackathon: Hackathon</title>
+  <title>Risk Hackathon</title>
 
-  <meta property="description" itemprop="description" content="A training opportunity in data analytics&#10;&#10;Additional details to be added soon!"/>
+  <meta property="description" itemprop="description" content="A training opportunity in data analytics"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Risk Hackathon: Hackathon"/>
+  <meta property="og:title" content="Risk Hackathon"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A training opportunity in data analytics&#10;&#10;Additional details to be added soon!"/>
+  <meta property="og:description" content="A training opportunity in data analytics"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Risk Hackathon"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Risk Hackathon: Hackathon"/>
-  <meta property="twitter:description" content="A training opportunity in data analytics&#10;&#10;Additional details to be added soon!"/>
+  <meta property="twitter:title" content="Risk Hackathon"/>
+  <meta property="twitter:description" content="A training opportunity in data analytics"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Hackathon"]},{"type":"character","attributes":{},"value":["A training opportunity in data analytics\n\nAdditional details to be added soon!"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Risk Hackathon"]},{"type":"character","attributes":{},"value":["A training opportunity in data analytics"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2407,7 +2407,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Hackathon","description":"A training opportunity in data analytics\n\nAdditional details to be added soon!","authors":[]}
+{"title":"Risk Hackathon","description":"A training opportunity in data analytics","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2444,11 +2444,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Hackathon</h1>
+<h1>Risk Hackathon</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A training opportunity in data analytics</p>
-<p>Additional details to be added soon!</p></p>
+<p><p>A training opportunity in data analytics</p></p>
 </div>
 
 
@@ -2457,24 +2456,205 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#process" id="toc-process">Process</a></li>
+<li><a href="#hackathon" id="toc-hackathon">Hackathon</a></li>
 <li><a href="#data" id="toc-data">Data</a></li>
+<li><a href="#tasks" id="toc-tasks">Tasks</a></li>
 </ul>
 </nav>
 </div>
-<h2 id="process">Process</h2>
-<p>In the group hackathon (13:00-18:00), we will be using data
-visualization <strong>to understand how people perceive all sorts of
-technological and societal risks</strong>, from nuclear energy to
-climate change! Participants will work in small groups of three to five
-people to produce stunning data visualizations using information on risk
-perception related to numerous risk sources.</p>
+<h2 id="hackathon">Hackathon</h2>
+<p>The group hackathon aims to use data visualization <strong>to
+understand how people perceive technological and societal
+risks</strong>, from nuclear power to artificial intelligence!</p>
+<p>Participants will work in small groups of 4 to 5 people to produce
+data visualizations with the goal of understanding risk perception, in
+particular, exploring the potential of novel semantic models to predict
+risk perception and how well these fare relatively to the classic
+psychometric model (cf. <a
+href="https://link.springer.com/article/10.1007/BF00143739">Fischhoff et
+al., 1978</a>).</p>
+<p>In what follows, we first provide an overview of the available data,
+and, second, provide a set of tasks that the groups are asked to
+complete. The tasks have been designed to offer both an overview of the
+data as well as a training opportunity in data wrangling and data
+visualization using R. Each group can, in addition, and time permitting,
+use the data set to create additional visualizations or analyses that
+can shed light on the topic of risk perception - the sky is the
+limit!</p>
 <h2 id="data">Data</h2>
 <p>We will use data from an ongoing project by <a
-href="https://psychologie.unibas.ch/en/persons/zakir-hussain/about-me/">Zak
-Hussain</a>, <a href="https://dwulff.github.io/about/">Dirk Wulff</a>,
-and <a href="https://matarui.org">Rui Mata</a> that will be made
-publicly available shortly before the hackathon.</p>
+href="https://www.linkedin.com/in/zakir-a-s-hussain/">Zak Hussain</a>,
+<a href="https://dwulff.github.io/about/">Dirk Wulff</a>, and <a
+href="https://matarui.org">Rui Mata</a> that aimed to create the largest
+data set concerning risk perception to date so as to test novel semantic
+models of risk perception.</p>
+<p>The project stems from a pre-registered <a
+href="https://osf.io/6m7xr">study</a> conducted in 2022. The table below
+provides an overview of pre-processed data stemming from the study that
+is made available for the purposes of the hackathon. You can find a link
+to the data <a href="0_website/data.csv/">here</a>.</p>
+<p><strong>Risks and Risk Ratings</strong></p>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>word</code></td>
+<td style="text-align: left;">1004 risks for which Hussain et
+al. obtained risk ratings from an online survey.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cluster</code></td>
+<td style="text-align: left;">A categorization of each word/risk into
+different categories (e.g., Activities/Technologies, Transportation).
+The clustering was performed using free association data using a
+standard clustering algorithm.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>risk_rating</code></td>
+<td style="text-align: left;">Mean of participant risk ratings given to
+each word on a scale of -100 (safe) to +100 (risky).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Psychometric Model</strong></p>
+<p>The following variables represent mean responses given on 7-point
+likert scale to the associated questions in the online survey:</p>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>psych_voluntary</code></td>
+<td style="text-align: left;">Are individuals exposed to this risk
+voluntarily or involuntarily? (1=voluntary, 7=involuntary)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>psych_fatal</code></td>
+<td style="text-align: left;">How fatal are the consequences of this
+risk? (1=not-fatal, 7=fatal)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>psych_immediate</code></td>
+<td style="text-align: left;">Is death from this risk immediate or
+delayed? (1=immediate, 7=delayed)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>psych_dread</code></td>
+<td style="text-align: left;">Is this a risk that individuals can reason
+about calmly or is it one that they have great dread for? (1=calm,
+7=dread)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>psych_catastrophic</code></td>
+<td style="text-align: left;">Is this a risk that kills one person at a
+time (chronic) or a risk that kills large numbers of people at once
+(catastrophic)? (1=chronic, 7=catastrophic)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>psych_controllable</code></td>
+<td style="text-align: left;">Is this risk controllable or
+uncontrollable for the individual exposed to this risk? (1=controllable,
+7=uncontrollable)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>psych_known_sci</code></td>
+<td style="text-align: left;">Is this risk known or unknown to
+science,Is this risk known or unknown to the individuals exposed to this
+risk? (1=Known, 7=Unknown)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>psych_known</code></td>
+<td style="text-align: left;">Is this risk known or unkown to the
+individuals exposed to this risk? (1=known, 7=unkown)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>psych_new</code></td>
+<td style="text-align: left;">Is this risk new or old? (1=new,
+7=old)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">‘psych_pc[1-9]’</td>
+<td style="text-align: left;">9 principle components obtained via
+principle component analysis of the above psychometric dimensions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>in_Fisch</code></td>
+<td style="text-align: left;">Boolean indicating whether the word is
+contained in Fischhoff et al. (1978).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>psych_pred_risk</code></td>
+<td style="text-align: left;">Predicted riskiness of each word according
+to 9 psychometric dimensions (above)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Semantic Models</strong></p>
+<p>The following are predictions from GloVe and SWOW semantic models
+that were trained on online text or free association data,
+respectively.</p>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>glove_pred_risk</code></td>
+<td style="text-align: left;">Predicted riskiness of each word according
+to an embeddings model trained on online text data (GloVe)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>swow_pred_risk</code></td>
+<td style="text-align: left;">Predicted riskiness of each word according
+to an embeddings model trained on free association data (SWOW)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tasks">Tasks</h2>
+<ol type="1">
+<li><p>The first task should be for you to get some intuitive
+understanding of the distribution of ratings and the associated
+psychometric dimensions. To what extent do different categories of risks
+(e.g., techonolgical, transportation, health) are perceived as
+differently risky? Consider using visualization of distributions, for
+example, using density plots.</p></li>
+<li><p>To what extent do the risk perception results match the classic
+findings on risk perception? Does a two-dimensional visual
+representation of risks match well the patterns by Fischhoff et
+al. (1978)?</p></li>
+</ol>
+<p><a href="https://link.springer.com/article/10.1007/BF00143739">
+<img alt="Qries" src="0_website/Fischoff.png"
+  width=700" height="500"> </a></p>
+<ol start="3" type="1">
+<li>How well does the psychometric paradigm capture risk perception and
+how do the semantic models fare in comparison? Consider using scatter
+plots to examine the correlations between model predictions.</li>
+</ol>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
