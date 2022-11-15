@@ -41,13 +41,15 @@ The following variables represent mean responses given on 7-point likert scale t
 | `psych_immediate` | Is death from this risk immediate or delayed? (1=immediate, 7=delayed) |
 | `psych_dread` | Is this a risk that individuals can reason about calmly or is it one that they have great dread for? (1=calm, 7=dread) |
 | `psych_catastrophic` | Is this a risk that kills one person at a time (chronic) or a risk that kills large numbers of people at once (catastrophic)? (1=chronic, 7=catastrophic) |
-| `psych_controllable` |  Is this risk controllable or uncontrollable for the individual exposed to this risk? (1=controllable, 7=uncontrollable) |
+| `psych_controllable` |  Is this risk controllable or uncontrollable for the individual exposed to this risk? (1=uncontrollable, 7=controllable)* |
 | `psych_known_sci` | Is this risk known or unknown to science,Is this risk known or unknown to the individuals exposed to this risk? (1=Known, 7=Unknown)|
 | `psych_known` | Is this risk known or unkown to the individuals exposed to this risk? (1=known, 7=unkown) |
 | `psych_new` | Is this risk new or old? (1=new, 7=old) |
 | 'psych_pc[1-9]' | 9 principle components obtained via principle component analysis of the above psychometric dimensions |
 | `in_Fisch` | Boolean indicating whether the word is contained in Fischhoff et al. (1978). |
 | `psych_pred_risk` | Predicted riskiness of each word according to 9 psychometric dimensions (above) |
+
+* Original data has been transformed from 1=controllable, 7=uncontrollable to match Fischhooff et al.'s (1978) scale.
 
 **Semantic Models**
 
