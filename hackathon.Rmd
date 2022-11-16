@@ -41,7 +41,7 @@ The following variables represent mean responses given on 7-point likert scale t
 | `psych_immediate` | Is death from this risk immediate or delayed? (1=immediate, 7=delayed) |
 | `psych_dread` | Is this a risk that individuals can reason about calmly or is it one that they have great dread for? (1=calm, 7=dread) |
 | `psych_catastrophic` | Is this a risk that kills one person at a time (chronic) or a risk that kills large numbers of people at once (catastrophic)? (1=chronic, 7=catastrophic) |
-| `psych_controllable` |  Is this risk controllable or uncontrollable for the individual exposed to this risk? (1=controllable, 7=uncontrollable) |
+| `psych_controllable` |  Is this risk controllable or uncontrollable for the individual exposed to this risk? (1=uncontrollable, 7=controllable) |
 | `psych_known_sci` | Is this risk known or unknown to science,Is this risk known or unknown to the individuals exposed to this risk? (1=Known, 7=Unknown)|
 | `psych_known` | Is this risk known or unkown to the individuals exposed to this risk? (1=known, 7=unkown) |
 | `psych_new` | Is this risk new or old? (1=new, 7=old) |
@@ -60,7 +60,7 @@ The following are predictions from GloVe and SWOW semantic models that were trai
 
 ## Tasks
 
-1. The first task should be for you to get some intuitive understanding of the distribution of ratings and the associated psychometric dimensions. To what extent do different categories of risks (e.g., techonolgical, transportation, health) are perceived as differently risky? Consider using visualization of distributions, for example, using density plots. 
+1. The first task should be for you to get some intuitive understanding of the distribution of ratings and the associated psychometric dimensions. How riskily are the different categories of risks (e.g., techonolgical, transportation, health)  perceived? How much variance is there within each category? Consider using visualization of distributions, for example, using density plots. 
 
 2. To what extent do the risk perception results match the classic findings on risk perception? Does a two-dimensional visual representation of risks match well the patterns by Fischhoff et al. (1978)?
 
@@ -68,5 +68,7 @@ The following are predictions from GloVe and SWOW semantic models that were trai
   <img alt="Qries" src="0_website/Fischoff.png"
   width=700" height="500">
 </a>
+
+**Bonus Task:** How might you label `psych_pc1` and `psych_pc2` to make them interpretable? Which of the original 9 psychometric dimensions do the 2 principle components relate to the most? 
 
 3. How well does the psychometric paradigm capture risk perception and how do the semantic models fare in comparison? Consider using scatter plots to examine the correlations between model predictions.
