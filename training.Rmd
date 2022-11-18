@@ -3,7 +3,6 @@ title: "R Training"
 description: |
   Preparing for the hackathon
   
-  Additional details to be added soon!
 output: 
   distill::distill_article:
     md_extensions: +emoji
@@ -23,4 +22,7 @@ If you are new to R or need a refresher, we recommend you to go through the topi
 Topics 2 and 7-10 will especially come in handy!
 </aside>
 
-Please indicate whether you will be joining the training class in your [registration](https://forms.gle/4xATFZiGKfQoDNZK8) (open from October 17th till November 7th).
+
+## Material and Slides
+
+Please check out our [GitHub repository](https://github.com/cdsbasel/riskhackathon_training) to see what kind of topics we covered in our training session!
