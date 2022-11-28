@@ -1,0 +1,152 @@
+---
+title: "Hackathon Group ALTZ"
+author: "Amanda, Lorenda, Zoé, Tamara, Edi, Gayoung"
+output:
+  html_document: 
+    toc: yes
+    toc_depth: 6
+  pdf_document:
+    toc: yes
+    toc_depth: 6
+    fig_width: 8
+    fig_height: 3.5
+    highlight: tango
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, error = FALSE, message = FALSE)
+```
+
+## Load Dataset
+
+```{r}
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+```
+
+```{r}
+data <- read.csv("risk_hackathon.csv")
+```
+
+```{r}
+dim(data)
+
+names(data)
+```
+
+## Load Packages
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(viridis)
+library(hrbrthemes)
+library(dplyr)
+library(tidyr)
+```
+
+
+
+# Task 1
+
+```{r}
+ggplot(data= data, 
+       mapping = aes(x=risk_ratings, y=word), 
+       color = cluster) +
+  geom_point(aes(colour = factor(cluster)), size = 4)
+```
+
+
+```{r}
+data %>%
+  ggplot( aes(x=cluster, y=risk_ratings), fill=cluster) +
+    geom_violin(aes (fill = factor(cluster))) +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+    theme(legend.position="none", plot.title = element_text(size=11)) +
+    ggtitle("Violin chart")
+```
+
+
+```{r}
+data %>%
+  ggplot( aes(x=cluster, y=risk_ratings, fill=cluster)) +
+  geom_boxplot(aes (fill = factor(cluster))) +
+  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  theme(legend.position="none", plot.title = element_text(size=11)) +
+  ggtitle("Basic boxplot") +
+  scale_x_discrete(labels = c('Activities & \nTechnologies',
+                              'Crime & \nWar & \nViolence',
+                              'Health',
+                              'Nature & \nFood',
+                              'Transportation')) +
+  labs(y = "Risk Ranking", x = "Cluster")
+```
+
+
+```{r}
+data %>%
+  ggplot( aes(x=psych_known, y=psych_dread), colour=cluster)  +
+  geom_point(aes(colour = factor(cluster)), size = 2) +
+  geom_hline(yintercept = 3.5) +
+  geom_vline(xintercept = 3.5) +
+  scale_color_brewer(palette = "Paired") +
+  labs(y = "Psych Dread", x = "Psych Known") +
+  guides(color = guide_legend(title = "Cluster"))
+```
+
+
+```{r}
+ggplot(data, aes(x=psych_known, y=psych_dread, color=cluster)) + 
+  geom_point(aes(colour=factor(cluster)), size = 2) +
+  geom_smooth(method=lm, se=FALSE, fullrange=TRUE)
+```
+
+
+```{r}
+ggplot(data=data, aes(x=risk_ratings, group=cluster, fill=cluster)) +
+  geom_density(adjust=1.5, alpha=.4) +
+  xlim(-150, 150) +
+  theme_ipsum()
+```
+
+
+```{r, fig.dim = c(12, 7)}
+wide_psychometric <- data %>% 
+  select(cluster, 
+         psych_voluntary, 
+         psych_fatal, 
+         psych_immediate, 
+         psych_dread, 
+         psych_catastrophic, 
+         psych_controllable, 
+         psych_known_sci, 
+         psych_known, 
+         psych_new)
+
+
+long_psychometric <-  wide_psychometric %>% 
+  pivot_longer(!cluster, names_to = "psychom_var", values_to = "risk")
+
+
+ggplot(data=long_psychometric, aes(x=risk, group=cluster, fill=cluster)) +
+  geom_density(adjust=1.5, alpha=.4) +
+  theme_ipsum() +
+  facet_wrap("psychom_var")
+```
+
+
+```{r}
+ ggplot(data = data, aes(x=risk_ratings, y=cluster, colour=cluster)) +
+  geom_point() +
+  geom_jitter() +
+  geom_boxplot() +
+  labs(title = "Jitter Box Plot", x="Risk Rating", colour="Legend")
+```
+
+
+
+
+
+
+
+

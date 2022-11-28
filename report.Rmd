@@ -2,24 +2,22 @@
 title: "Report"
 description: |
   Using data visualization to understand risk perception
-  
-  Results of our Hackathon will be added here.
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ``` 
 
-## Report
+# Why Study Risk Perception?
+Use kernel density plots with risk clusters
 
-We will report the results of our hackathon on this page. Click the images below for examples of reports resulting from past CDS hackathons:
+# The Psychometric Paradigm
+PCA plot
+Regression coefficients?
 
-<a href="https://cdsbasel.github.io/SDG_hackathon/report.html">
-  <img alt="Qries" src="0_website/sdg.png"
-  width=380" height="500">
-</a>
+# Semantic Accounts of Risk Perception 
+Model comparison plot 
 
-<a href="https://cdsbasel.github.io/Diversity_hackathon/report.html">
-  <img alt="Qries" src="0_website/diversity.png"
-  width=380" height="500">
-</a>
+# Applications
+
+# Conclusions 
