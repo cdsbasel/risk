@@ -7,9 +7,10 @@ output: html_document
 
 ```{r setup, include=FALSE}
 library(tidyverse)
+library(dplyr)
 library(patchwork)
 library(corrplot)
-data <- read_csv("1_data/risk_hackathon.csv")
+data <- read_csv("risk_hackathon.csv")
 ```
 
 ## Task 1
@@ -238,8 +239,6 @@ ggsave("task2.png", width = 24, height = 16, units = "cm", scale = 1.5)
 ## Task 3
 
 ```{r}
-
-
 data_new$psychPredDiff<-data_new$psych_pred_risk - data_new$risk_ratings
 data_new$swowPredDiff<-data_new$swow_pred_risk - data_new$risk_ratings
 data_new$glovePredDiff<-data_new$glove_pred_risk - data_new$risk_ratings

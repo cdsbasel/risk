@@ -24,9 +24,196 @@ A hackathon is a group event that gets individuals to work on a common problem u
 
 # Results
 
+```{r}
+library(tidyverse)
+require(ggrepel)
+library(ggside)
+library(fmsb)
+
+risk = read_csv("risk_hackathon.csv")
+```
+
+
 The first task amounted to obtaining an overview of the data. 
 
+```{r}
+groups = c("Crime / War / Violence",
+           "Health",
+           "Transportation",
+           "Nature / Food",
+           "Activities / Technologies")
+p = risk %>%
+  mutate(cluster_fct = factor(cluster, levels = groups)) %>%
+  ggplot(mapping = aes(x = risk_ratings,
+                       fill = cluster_fct,
+                       col = cluster_fct)) +
+    geom_density() +
+    xlim(c(-100, 100)) +
+    theme_minimal() +
+  scale_fill_viridis_d(option = "E", alpha = .5, end = .95) +
+  scale_color_viridis_d(option = "E", alpha = .7, end = .95) +
+  theme(axis.text.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position = "none") +
+  labs(x = "Risk rating")
+pos = ggplot_build(p)$data[[1]] %>%
+  group_by(group) %>%
+  summarize(x = x[which.max(y)],
+            y = max(y)) %>%
+  mutate(label = groups,
+         cluster_fct = factor(label, levels = label))
+
+p + geom_label_repel(data = pos,
+                     mapping = aes(x = x, y = y, label = groups),
+                     fill = "white",nudge_y = .001, force = .01) +
+  labs(title = "Risk ratings",
+       subtitle = "Stratified by category",
+       caption = "Data of Hussain, Mata, & Wulff (2022)")
+```
+```{r}
+dat <- risk %>% 
+  rename(involuntary = psych_voluntary,
+         fatal = psych_fatal,
+         delayed = psych_immediate,
+         dread = psych_dread,
+         catastrophic = psych_catastrophic,
+         controllable = psych_controllable,
+         unknown_sci = psych_known_sci,
+         unknown = psych_known,
+         old = psych_new)
+
+df_radarchart <- dat %>% filter(word %in% c("handgun", "rock climbing", "vaccination")) %>% select(word, involuntary:old) %>%
+  add_row(.before = TRUE, word = "Min", involuntary = 1, fatal = 1, delayed = 1, dread = 1, catastrophic = 1, controllable = 1, unknown_sci = 1, unknown = 1, old = 1) %>%
+  add_row(.before = TRUE, word = "Max", involuntary = 7, fatal = 7, delayed = 7, dread = 7, catastrophic = 7, controllable = 7, unknown_sci = 7, unknown = 7, old = 7) %>% 
+  column_to_rownames(var = "word")
+
+create_radarchart <- function(data, color = "#00AFBB", 
+                              vlabels = colnames(data), vlcex = 0.7,
+                              caxislabels = NULL, title = NULL, ...)
+{
+  radarchart(
+    data,
+    # Customize the polygon
+    pcol = color, pfcol = scales::alpha(color, 0.5), plwd = 2, plty = 1,
+    # Customize the grid
+    cglcol = "grey", cglty = 3, cglwd = 0.8,
+    # Customize the axis
+    axislabcol = "grey", 
+    # Variable labels
+    vlcex = vlcex, vlabels = vlabels, 
+    caxislabels = caxislabels, title = title, ...
+  )
+}
+
+colors <- c("#00AFBB", "#E7B800", "#FC4E07")
+titles <- rownames(df_radarchart)[3:nrow(df_radarchart)]
+
+# Plot 1 (vaccination):
+create_radarchart(
+  data = df_radarchart[c(1, 2, 3), ], seg = 6,
+  color = colors[1], title = titles[1]
+)
+
+# Plot 2 (rock climbing):
+create_radarchart(
+  data = df_radarchart[c(1, 2, 4), ],seg = 6,
+  color = colors[2], title = titles[2]
+)
+
+# Plot 3 (handgun):
+create_radarchart(
+  data = df_radarchart[c(1, 2, 5), ], seg = 6,
+  color = colors[3], title = titles[3]
+)
+
+```
+
+
+```{r}
+dat = risk
+
+p1 <- risk %>% 
+  # select the relevant clusters
+  filter(cluster %in% c("Crime / War / Violence", "Nature / Food")) %>% 
+  ggplot(aes(y = psych_dread, x = psych_voluntary,
+             color = cluster,
+             fill = cluster,
+             alpha = risk_ratings)) +
+  annotate(
+    "text", label = "Crime / War / Violence",
+    x = 5, y = 6.5, size = 5, colour = "#484D6D"
+  )+
+  annotate(
+    "text", label = "Nature / Food",
+    x = 1.5, y = 4.5, size = 5, colour = "#57A773"
+  )+
+  geom_point(shape = 21, color = "grey95", stroke = .5, size = 2) +
+  geom_xsidedensity(aes(fill = cluster), alpha = .5) +
+  geom_ysidedensity(aes(fill = cluster), alpha = .5) +
+  # add some labels
+  geom_label(data = dat %>% filter(cluster %in% c("Crime / War / Violence", "Nature / Food") &
+                              in_Fisch == TRUE), 
+    aes(label = word), alpha = 1,vjust = 0, nudge_y = 0.05, fill = "white") +
+  theme_minimal() +
+  labs(title = "Nature and Crime are clearly distinguishable with regards to the Dread and Voluntary Dimensions",
+       x = "", y = "")+
+  theme(panel.grid = element_blank(),
+        axis.text = element_text(size = 12, color = "grey20"),
+        axis.title = element_text(size = 14, color = "grey20"),
+        plot.title = element_text(size = 18, color = "grey20",
+                                  margin = margin(b = 20)),
+        legend.position = "none",
+        panel.background = element_rect(fill = "NA", color = "grey70"),
+        plot.background = element_rect(fill = "grey95"),
+        ggside.axis.text = element_blank(),
+        ggside.panel.background = element_blank(),
+        plot.title.position = "plot",
+        ) +
+  scale_fill_manual(values = c("#484D6D", "#57A773")) +
+  scale_color_manual(values = c("#484D6D", "#57A773")) +
+  scale_x_continuous(limits = c(1,7), breaks = c(1,7), labels = c("Involuntary", "Voluntary"))+
+  scale_y_continuous(limits = c(1,7), breaks = c(1,7), labels = c("Calm", "Dreaded"))+
+  scale_xsidey_continuous()   + scale_ysidex_continuous()
+
+p1
+```
+
+
+
 The second task asked participants to draw comparisons between past results (e.g., Fischhoff et al., 1978) and the novel results by Hussain et al. (2022). 
+
+```{r}
+dat = risk %>%
+  arrange(risk_ratings, in_Fisch) %>%
+  mutate(cluster_fct = factor(cluster, levels = groups))
+
+dat %>%
+  select(starts_with("psych"),-psych_pred_risk,risk_ratings) %>%
+  cor() %>%
+  as.data.frame() %>%
+  mutate(var = rownames(.)) %>%
+  pivot_longer(-var) %>%
+  filter(!str_detect(var, "[:digit:]"),
+         str_detect(name, "[:digit:]")) %>%
+  mutate(var = str_remove(var, "psych_"),
+         name = str_remove(name, "psych_"),
+         var = as_factor(var),
+         name = factor(name,
+                       levels = sort(unique(name), decreasing = T))) %>%
+  ggplot(aes(x = var, y = name,
+             label = round(value,2), fill = value)) +
+   geom_tile() +
+   geom_text(col = "white") +
+   theme_minimal() +
+   scale_fill_viridis_c() +
+   theme(axis.text.x = element_text(angle = 45, hjust=1),
+         axis.title = element_blank()) +
+  theme(legend.position = "none") +
+  geom_vline(xintercept = 9.5, col = "white", size=1) +
+  labs(title = "Component loadings",
+       caption = "Data of Hussain, Mata, & Wulff (2022)")
+```
+
 
 Many of the groups plotted a 2D representation. In addition, they also compared the PCA results. 
 
