@@ -20,7 +20,7 @@ In what follows, we first provide an overview of the available data, and, second
 
 We will use data from an ongoing project by [Zak Hussain](https://www.linkedin.com/in/zakir-a-s-hussain/), [Dirk Wulff](https://dwulff.github.io/about/), and [Rui Mata](https://matarui.org) that aimed to create the largest data set concerning risk perception to date so as to test novel semantic models of risk perception. 
 
-The project stems from a pre-registered [study](https://osf.io/6m7xr) conducted in 2022. The table below provides an overview of pre-processed data stemming from the study that is made available for the purposes of the hackathon. You can find a link to the data [here](0_website/data.csv/).
+The project stems from a pre-registered [study](https://osf.io/6m7xr) conducted in 2022. The table below provides an overview of pre-processed data stemming from the study that is made available for the purposes of the hackathon.
 
 **Risks and Risk Ratings**
 
