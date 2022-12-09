@@ -177,9 +177,6 @@ p1 <- risk %>%
 
 p1
 ```
-
-
-
 The second task asked participants to draw comparisons between past results (e.g., Fischhoff et al., 1978) and the novel results by Hussain et al. (2022). 
 
 ```{r}
