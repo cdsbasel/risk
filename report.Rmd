@@ -20,7 +20,7 @@ Zak Hussain provided a rationale and introduction to the topic in his presentati
 
 # Hackathon
 
-A hackathon is a group event that gets individuals to work on a common problem using code. In the CDS Risk Hackathon participants were asked to answer a number of questions pertaining to how people perceive risks to be answered using data visualization in R. The specific questions and data descriptors are provided [here](hackathon.html). The participants were organized intro groups of 4 to 5 people and collaborated extensively to produce answers to the challenges in the form of data visualizations. CDS also provided some training prior to the event in the form of a refresher course in the morning of the event. The results presented below are a summary of the results produced by the hackathon participants.
+A hackathon is a group event that gets individuals to work on a common problem using code. In the CDS Risk Hackathon participants were asked to answer a number of questions pertaining to how people perceive risks to be answered using data visualization in R. The specific questions and data descriptors are provided [here](hackathon.html). The participants were organized intro groups of 4 to 5 people and collaborated extensively to produce answers to the challenges in the form of data visualizations. CDS also provided some training prior to the event in the form of a refresher course in the morning of the event. The results presented below are a subset of the data visualizations produced by the hackathon participants. 
 
 # Results
 
@@ -70,6 +70,7 @@ p + geom_label_repel(data = pos,
        subtitle = "Stratified by category",
        caption = "Data of Hussain, Mata, & Wulff (2022)")
 ```
+
 ```{r}
 dat <- risk %>% 
   rename(involuntary = psych_voluntary,
@@ -225,6 +226,15 @@ Finally, the groups were asked to compare the results of different models.
 
 # Conclusion
 
+# Testimonials
+
+"I really liked the close group collaboration and the fact that we had experienced team members who could help us." 
+
+"I learned a lot as a R Novice thanks to the instructors' guidance"
+
+It's a cool idea to split in different groups with one dataset and the same task. As in the end, we have different outcomes of visualizations and insights.
+
+"the pizza was great :))"
 
 # References
 
