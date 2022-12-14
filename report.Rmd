@@ -83,7 +83,7 @@ dat <- risk %>%
          unknown = psych_known,
          old = psych_new)
 
-df_radarchart <- dat %>% filter(word %in% c("handgun", "rock climbing", "vaccination")) %>% select(word, involuntary:old) %>%
+df_radarchart <- dat %>% filter(word %in% c("handgun", "vaccination", "artificial intelligence")) %>% select(word, involuntary:old) %>%
   add_row(.before = TRUE, word = "Min", involuntary = 1, fatal = 1, delayed = 1, dread = 1, catastrophic = 1, controllable = 1, unknown_sci = 1, unknown = 1, old = 1) %>%
   add_row(.before = TRUE, word = "Max", involuntary = 7, fatal = 7, delayed = 7, dread = 7, catastrophic = 7, controllable = 7, unknown_sci = 7, unknown = 7, old = 7) %>% 
   column_to_rownames(var = "word")
@@ -109,13 +109,13 @@ create_radarchart <- function(data, color = "#00AFBB",
 colors <- c("#00AFBB", "#E7B800", "#FC4E07")
 titles <- rownames(df_radarchart)[3:nrow(df_radarchart)]
 
-# Plot 1 (vaccination):
+# Plot 1 (artificial intelligence):
 create_radarchart(
   data = df_radarchart[c(1, 2, 3), ], seg = 6,
   color = colors[1], title = titles[1]
 )
 
-# Plot 2 (rock climbing):
+# Plot 2 (vaccination):
 create_radarchart(
   data = df_radarchart[c(1, 2, 4), ],seg = 6,
   color = colors[2], title = titles[2]
@@ -131,52 +131,147 @@ create_radarchart(
 
 
 ```{r}
-dat = risk
+data <- risk
+data$category <- factor(data$cluster, levels=c("Activities / Technologies", "Crime / War / Violence", "Health", "Nature / Food", "Transportation" ))
 
-p1 <- risk %>% 
-  # select the relevant clusters
-  filter(cluster %in% c("Crime / War / Violence", "Nature / Food")) %>% 
-  ggplot(aes(y = psych_dread, x = psych_voluntary,
-             color = cluster,
-             fill = cluster,
-             alpha = risk_ratings)) +
-  annotate(
-    "text", label = "Crime / War / Violence",
-    x = 5, y = 6.5, size = 5, colour = "#484D6D"
-  )+
-  annotate(
-    "text", label = "Nature / Food",
-    x = 1.5, y = 4.5, size = 5, colour = "#57A773"
-  )+
-  geom_point(shape = 21, color = "grey95", stroke = .5, size = 2) +
-  geom_xsidedensity(aes(fill = cluster), alpha = .5) +
-  geom_ysidedensity(aes(fill = cluster), alpha = .5) +
-  # add some labels
-  geom_label(data = dat %>% filter(cluster %in% c("Crime / War / Violence", "Nature / Food") &
-                              in_Fisch == TRUE), 
-    aes(label = word), alpha = 1,vjust = 0, nudge_y = 0.05, fill = "white") +
+plot_main <- data %>% 
+  bind_cols(tibble(risk = scales::rescale(data$risk_ratings))) %>% 
+  ggplot(aes(y = psych_pc1, x = psych_pc2)) +
+  geom_hline(yintercept = 0) +
+  geom_vline(xintercept = 0) +
+  geom_point(aes(color = risk), alpha = 0.8, size = 5) +
+  scale_colour_gradient2(
+    low = "#006400",
+    mid = "#B58B00",
+    midpoint = 0.5,
+    high = "#8B0000") +
+  geom_label(data = data %>% filter(in_Fisch == TRUE), aes(label = word)) +
   theme_minimal() +
-  labs(title = "Nature and Crime are clearly distinguishable with regards to the Dread and Voluntary Dimensions",
-       x = "", y = "")+
-  theme(panel.grid = element_blank(),
-        axis.text = element_text(size = 12, color = "grey20"),
-        axis.title = element_text(size = 14, color = "grey20"),
-        plot.title = element_text(size = 18, color = "grey20",
-                                  margin = margin(b = 20)),
-        legend.position = "none",
-        panel.background = element_rect(fill = "NA", color = "grey70"),
-        plot.background = element_rect(fill = "grey95"),
-        ggside.axis.text = element_blank(),
-        ggside.panel.background = element_blank(),
-        plot.title.position = "plot",
-        ) +
-  scale_fill_manual(values = c("#484D6D", "#57A773")) +
-  scale_color_manual(values = c("#484D6D", "#57A773")) +
-  scale_x_continuous(limits = c(1,7), breaks = c(1,7), labels = c("Involuntary", "Voluntary"))+
-  scale_y_continuous(limits = c(1,7), breaks = c(1,7), labels = c("Calm", "Dreaded"))+
-  scale_xsidey_continuous()   + scale_ysidex_continuous()
+  coord_cartesian(xlim = c(-5, 5), ylim = c(-9.5, 9.5)) +
+  annotate("label", x = 5, y = 1, label = "known", fill = "grey20", color = "white") +
+  annotate("label", x = 5, y = 0, label = "voluntary", fill = "grey20", color = "white") +
+  annotate("label", x = 5, y = -1, label = "immediate", fill = "grey20", color = "white") +
+  annotate("label", x = -5, y = 1, label = "unknown", fill = "grey20", color = "white") +
+  annotate("label", x = -5, y = 0, label = "involuntary", fill = "grey20", color = "white") +
+  annotate("label", x = -5, y = -1, label = "delayed", fill = "grey20", color = "white") +
+  annotate("label", x = 0, y = 9.5, label = "dread", fill = "grey20", color = "white") +
+  annotate("label", x = 0, y = 9, label = "fatal", fill = "grey20", color = "white") +
+  annotate("label", x = 0, y = 8.5, label = "uncontrollable", fill = "grey20", color = "white") +
+  annotate("label", x = 0, y = 8, label = "involuntary", fill = "grey20", color = "white") +
+  annotate("label", x = 0, y = -8, label = "calm", fill = "grey20", color = "white") +
+  annotate("label", x = 0, y = -8.5, label = "non-fatal", fill = "grey20", color = "white") +
+  annotate("label", x = 0, y = -9, label = "controllable", fill = "grey20", color = "white") +
+  annotate("label", x = 0, y = -9.5, label = "voluntary", fill = "grey20", color = "white")  +
+  theme(legend.position="none") +
+    theme(axis.text = element_blank(),  
+        axis.ticks = element_blank(),
+        axis.title =element_blank())
+  
+data$alpha <- (data$risk_ratings + 100) / 200
 
-p1
+# for individual categories
+data.activ <- data %>% filter(category=="Activities / Technologies")
+activities <- data.activ %>% 
+  ggplot(aes(y = psych_pc1, x = psych_pc2, color=alpha)) +
+  geom_hline(yintercept = 0) +
+  geom_vline(xintercept = 0) +
+  geom_point( size = 3, alpha=.8) +
+  scale_colour_gradient2(
+    low = "#006400",
+    mid = "#B58B00",
+    midpoint = 0.5,
+    high = "#8B0000") +
+  theme_minimal() + labs(x=NULL, y=NULL) +
+  coord_cartesian(xlim = c(-5, 5), ylim = c(-8, 8)) +
+  labs(subtitle="Activities / Technologies", alpha=NULL) + theme(legend.position = "none") +
+    theme(axis.text = element_blank(),  
+        axis.ticks = element_blank(),
+        axis.title =element_blank())
+
+data.crime <- data %>% filter(category=="Crime / War / Violence")
+crime <- data.crime %>% 
+  ggplot(aes(y = psych_pc1, x = psych_pc2, color=alpha)) +
+  geom_hline(yintercept = 0) +
+  geom_vline(xintercept = 0) +
+  geom_point( size = 3, alpha=.8) +
+  scale_colour_gradient2(
+    low = "#006400",
+    mid = "#B58B00",
+    midpoint = 0.5,
+    high = "#8B0000") +
+  theme_minimal() + labs(x=NULL, y=NULL) +
+  coord_cartesian(xlim = c(-5, 5), ylim = c(-8, 8)) +
+  labs(subtitle="Crime / War / Violence", alpha=NULL) + theme(legend.position = "none") +
+    theme(axis.text = element_blank(),  
+        axis.ticks = element_blank(),
+        axis.title =element_blank())
+
+data.health <- data %>% filter(category=="Health")
+health <- data.health %>% 
+  ggplot(aes(y = psych_pc1, x = psych_pc2, color=alpha)) +
+  geom_hline(yintercept = 0) +
+  geom_vline(xintercept = 0) +
+  geom_point( size = 3, alpha=.8) +
+  scale_colour_gradient2(
+    low = "#006400",
+    mid = "#B58B00",
+    midpoint = 0.5,
+    high = "#8B0000")+
+  theme_minimal() + labs(x=NULL, y=NULL) +
+  coord_cartesian(xlim = c(-5, 5), ylim = c(-8, 8)) +
+  labs(subtitle="Health", alpha=NULL) + theme(legend.position = "none") +
+    theme(axis.text = element_blank(),  
+        axis.ticks = element_blank(),
+        axis.title =element_blank())
+
+data.nature <- data %>% filter(category=="Nature / Food")
+nature <- data.nature %>% 
+  ggplot(aes(y = psych_pc1, x = psych_pc2, color=alpha)) +
+  geom_hline(yintercept = 0) +
+  geom_vline(xintercept = 0) +
+  geom_point( size = 3, alpha=.8) +
+  scale_colour_gradient2(
+    low = "#006400",
+    mid = "#B58B00",
+    midpoint = 0.5,
+    high = "#8B0000") +
+  theme_minimal() + labs(x=NULL, y=NULL) +
+  coord_cartesian(xlim = c(-5, 5), ylim = c(-8, 8)) +
+  labs(subtitle="Nature / Food", alpha=NULL) + theme(legend.position = "none") +
+    theme(axis.text = element_blank(),  
+        axis.ticks = element_blank(),
+        axis.title =element_blank())
+
+data.transport <- data %>% filter(category=="Transportation")
+transport <- data.transport %>% 
+  ggplot(aes(y = psych_pc1, x = psych_pc2, color=alpha)) +
+  geom_hline(yintercept = 0) +
+  geom_vline(xintercept = 0) +
+  geom_point( size = 3, alpha=.8) +
+  scale_colour_gradient2(
+    low = "#006400",
+    mid = "#B58B00",
+    midpoint = 0.5,
+    high = "#8B0000") +
+  theme_minimal() + labs(x=NULL, y=NULL) +
+  coord_cartesian(xlim = c(-5, 5), ylim = c(-8, 8)) +
+  labs(subtitle="Transportation", alpha=NULL) + theme(legend.position = "none") + 
+  theme(axis.text = element_blank(),  
+        axis.ticks = element_blank(),
+        axis.title =element_blank())
+
+
+layout <- "
+AAAAAB
+AAAAAC
+AAAAAD
+AAAAAE
+AAAAAF
+"
+plot_main + crime + health + transport + nature + activities + 
+  plot_layout(design = layout)
+
+ggsave("task2.png", width = 24, height = 16, units = "cm", scale = 1.5)
 ```
 The second task asked participants to draw comparisons between past results (e.g., Fischhoff et al., 1978) and the novel results by Hussain et al. (2022). 
 
