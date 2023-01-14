@@ -110,7 +110,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Report"]},{"type":"character","attributes":{},"value":["Using data visualization to understand risk perception\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["chunk_output_type"]}},"value":[{"type":"character","attributes":{},"value":["console"]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","editor_options","output"]}},"value":[{"type":"character","attributes":{},"value":["Report"]},{"type":"character","attributes":{},"value":["Using data visualization to understand risk perception\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["chunk_output_type"]}},"value":[{"type":"character","attributes":{},"value":["console"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["md_extensions"]}},"value":[{"type":"character","attributes":{},"value":["+emoji"]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2498,64 +2498,62 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#results" id="toc-results">Results</a></li>
 <li><a href="#limitations" id="toc-limitations">Limitations</a></li>
 <li><a href="#conclusion" id="toc-conclusion">Conclusion</a></li>
-<li><a href="#testimonials" id="toc-testimonials">Testimonials</a></li>
 <li><a href="#references" id="toc-references">References</a></li>
 </ul>
 </nav>
 </div>
 <h1 id="background">Background</h1>
-<p>The past years have shown that risk perception and risk communication are key issues in today’s societies dealing with important problems, from pandemics to climate change. A number of voices have argued for the need to understand and estimate the public’s risk perceptions in many domains to better target specific interventions and help both laypeople, experts, and policy-makers make better, informed decisions (e.g., Jenny &amp; Betsch, 2022).</p>
-<p>The Risk Hackathon aimed to provide a training opportunity in data analytics while showcasing relevant work on risk perception by the Center for Cognitive and Decision Sciences. The hackathon proposed a set challenges linked to analysing a new data set on risk perception and evaluating the performance of novel models to predict risk perception in this novel data set.</p>
-<p>The hackathon used data from a pre-registered <a href="https://osf.io/6m7xr">study</a> by Hussain et al. conducted in 2022 designed to compare the performance of the classic psychometric paradigm (Fischhoff et al., 1978) against novel models that rely on language embeddings (e.g., Bahtia, 2016). In this context, embeddings refer to vector representations of words obtained from natural language processing models trained on large amounts of text data or other data sources (e.g., free associations).</p>
-<p>The Hussain et al. study involved asking thousands of participants to rate over 1000 words or terms (e.g., handgun, vaccination, artificial intelligence) concerning their perceived risk, with each word being rated on a scale of -100 (safe) to +100 (risky). The same words were also rated on 9 (psychometric) dimensions concerning, for example, whether the risk is typically fatal, controllable, voluntary, etc. The ratings from several respondents were averaged to create an average risk and psychometric ratings that were then utilized in the hackathon and to compare the predictions of different models concerning average risk perception for each word.</p>
+<p>The past years have shown that risk perception and risk communication are key issues in today’s societies. A number of voices have argued for the need to understand and estimate the public’s risk perceptions in many domains to better target specific interventions and help both laypeople and policy-makers make better, informed decisions, for example, when fighting global pandemics or climate change (e.g., Jenny &amp; Betsch, 2022).</p>
+<p>The Risk Hackathon aimed to provide a training opportunity in data analytics while showcasing ongoing work on risk perception by the Center for Cognitive and Decision Sciences. The hackathon proposed a set challenges linked to analysing a new data set on risk perception and evaluating the performance of novel models to predict risk perception.</p>
+<p>The hackathon used data from a pre-registered <a href="https://osf.io/6m7xr">study</a> by Hussain et al. conducted in 2022 designed to compare the performance of the classic psychometric paradigm (Fischhoff et al., 1978) against novel models that rely on language embeddings (e.g., Bhatia, 2019). In this context, embeddings refer to vector representations of words obtained from natural language processing models trained on large amounts of text data or other data sources (e.g., free associations).</p>
+<p>The Hussain et al. study involved asking thousands of participants to rate over 1000 words or terms (e.g., handgun, vaccination, artificial intelligence) concerning their perceived risk, with each word being rated on a scale of -100 (safe) to +100 (risky). The same words were also rated on 9 (psychometric) dimensions concerning, for example, whether the risk is typically fatal, controllable, voluntary, etc. The ratings from several respondents were averaged to create an average risk and psychometric ratings. These average risk ratings were utilized in the hackathon to understand average risk perception for different risks and compare the predictions of different models of risk perception.</p>
 <h1 id="hackathon">Hackathon</h1>
-<p>A hackathon is a group event that gets individuals to work on a common problem using code. In the CDS Risk Hackathon participants were asked to answer a number of questions pertaining to how people perceive risks to be answered using data visualization in R. The specific questions and data descriptors are provided <a href="hackathon.html">here</a>. The participants were organized intro groups of 4 to 5 people and collaborated to produce answers to the challenges in the form of data visualizations. CDS members provided training prior to the hackathon in the form of an R refresher course in the morning of the event. After the hackthon event, participants discussed their experience over drinks and pizza.</p>
+<p>A hackathon is a group event that gets individuals to work on a common problem using code. In the CDS Risk Hackathon participants were asked to answer a number of questions pertaining to how people perceive risks. The specific questions and data descriptors are provided <a href="hackathon.html">here</a>. The participants were organized intro groups of 4 to 5 people and collaborated to produce answers to the challenges in the form of data visualizations in R. CDS members provided training prior to the hackathon in the form of an R refresher course in the morning of the event. After the hackthon event, participants discussed their experience over drinks <span class="emoji" data-emoji="beers">🍻</span> and pizza <span class="emoji" data-emoji="pizza">🍕</span>.</p>
 <h1 id="results">Results</h1>
-<p>The results presented below are a subset of the data visualizations produced by the hackathon participants and are used to give an idea of the sort of products generated by the hackathon. The full analysis of the data used will be provided in a scientific manuscript (Hussain et al., in preparation).</p>
+<p>The results presented below are a subset of the data visualizations produced by the hackathon participants and are used to give an idea of the sort of insights generated by the hackathon. The full analysis of the data used will be provided in a scientific manuscript (Hussain et al., in preparation).</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <h4 id="items-related-to-crime-war-and-violence-are-seen-as-most-risky">Items related to crime, war, and violence, are seen as most risky</h4>
-<p>Many of the word (i.e., events or actions) rated as most risky have to do with crime, war, or violence. A number of health-related items and technologies are also seen as quite risky on average. Some hackathon participants used density plots to obtain an overview of risk ratings that make clear the average differences between these different types of risks.</p>
+<p>Many of the words (i.e., events or actions) rated as most risky have to do with crime, war, or violence. A number of health-related items and technologies are also seen as quite risky on average. Some hackathon participants used density plots to obtain an overview of risk ratings that make clear the average differences between these different types of risks.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="report_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
 <h4 id="items-differ-considerably-in-their-psychometric-profile">Items differ considerably in their psychometric profile</h4>
-<p>The different types of risks have different profiles concerning different psychometric dimensions. Some hackathon participants used radar charts to explore the profiles of different types of risks, including older ones, like handgungs and newer ones, like artificial intelligence.</p>
+<p>The different types of risks have different profiles concerning the 9 psychometric dimensions that were considered in the study in line with past work (cf. Bhatia, 2019; Fischhoff et al., 1978). Some hackathon participants used radar charts to explore the profiles of different types of risks, including older ones, like handgungs, and newer ones, like artificial intelligence.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="report_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
 <h4 id="replicating-the-two-dimensional-representation-of-risk-perception">Replicating the two-dimensional representation of risk perception</h4>
-<p>Participants were asked to replicate the classic two-dimensional visual representation of risks by Fischhoff et al. (1978)</p>
+<p>Participants were asked to replicate the classic two-dimensional visual representation of risks first obtained by Fischhoff et al. (1978).</p>
 <p><a href="https://link.springer.com/article/10.1007/BF00143739">
 <img alt="Qries" src="0_website/Fischoff.png"
   width=700" height="500">
 </a></p>
-<p>Some participants created a modern version of the plot - including 1004 risks and highlighting those that were also present in Fischhoff et al. (1978).</p>
+<p>Most participants created a modern version of the plot - including 1004 risks - and highlighting those that were also present in Fischhoff et al. (1978).</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="report_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
-<h4 id="the-results-question-the-two-dimensional-representation-of-risk-perception">The results question the two-dimensional representation of risk perception…</h4>
-<p>The second task asked participants to draw comparisons between past results (e.g., Fischhoff et al., 1978) and the novel results by Hussain et al. (2022).</p>
-<p>Many of the groups plotted a 2D representation. In addition, they also compared the PCA results.</p>
-<p>Finally, the groups were asked to compare the results of different models.</p>
+<h4 id="the-results-question-the-two-dimensional-representation-of-risk-perception">The results question the two-dimensional representation of risk perception</h4>
+<p>Fischhoff et al. (1978) conduct a principal component analysis on the psychometric items and concluded that risk could be accounted for by a two-dimensional representation. However, the novel results by Hussain et al. (2022) suggest that a two-dimensional representation may not be the best way to think about this larger set of risks.</p>
+<p>As can be seen in the tile plot below, the first principal component (pc1) is highly correlated with the risk ratings (r = .81) but a number of additional components (pc3, pc5, pc2) show similar correlations to risk ratings (r ≈ .2). This questions a two-dimensional representation of risks as initially proposed by Fischhoff and colleagues.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="report_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
+<p>Finally, the groups were asked to compare the results of different models.</p>
 <h1 id="limitations">Limitations</h1>
-<p>The CDS Risk Hackathon has mostly a pedagogical character and, consequently, focused less on advancing our understanding of risk perception than providing participants with an opportunity to explore a novel data set. Nevertheless, some of the limitations of the data and analysis conducted should be emphasized.</p>
+<p>The CDS Risk Hackathon has mostly a pedagogical character and, consequently, focused less on advancing our understanding of risk perception than providing participants with an opportunity to explore a novel data set. Nevertheless, some of the limitations of the data and analyses conducted should be emphasized.</p>
 <ul>
-<li><p>While great care was taken to ensure high reliability of the mean risk ratings and psychometric dimensions, the data used are averages of small numbers of English-speaking participants and, therefore, do not represent all possible assessments of risk perception. Past work suggested that are important individual and group preferences in risk assessments and it could be important to assess these to understand phenomena like risk polarization (cf. Wulff &amp; Mata, 2022)</p></li>
-<li><p>Despite the data set of words representing the largest set of risks collected, there are likely others that haven’t been considered, including some that may be very relevant (e.g., cyberfraud, microplastic, fusion)</p></li>
-<li><p>the models considered in the prediction exercise are only a subset of possible models and more sophisticated ones may be, including that the risks considered desprediction models used are based on single words not sentences</p></li>
-<li><p>the new models cannot beat the psychometric paradigm</p></li>
-<li><p>whether ensemble model can be used to predict risk perception in other contexts or more generally remains to be tested</p></li>
+<li><p>While great care was taken to ensure high reliability of the mean risk ratings and psychometric dimensions, the data used are averages of small numbers of English-speaking participants and, therefore, may not represent all possible views on risk perception. Past work suggested that are important individual and group preferences in risk assessments and it could be important to assess these to understand phenomena like risk polarization (cf. Wulff &amp; Mata, 2022).</p></li>
+<li><p>Despite the data set of words representing the largest set of risks collected, there some that have not been considered, including some that may be very relevant to publich health and safety (e.g., cyberfraud, microplastic, fusion).</p></li>
+<li><p>The models considered in the prediction exercise are only a subset of possible models and more sophisticated ones may be developed. For example, ensemble models that make use of several embeddings can be used, which is something that will be explored in Hussain et al. (in preparation). More generally, the models considered were obtained from single words or bigrams and did not consider full sentences or larger amounts of text that can be important for contextualizing certain risks.</p></li>
+<li><p>As it stands, the new models do not seem to beat the psychometric paradigm.</p></li>
 </ul>
 <h1 id="conclusion">Conclusion</h1>
-<h1 id="testimonials">Testimonials</h1>
+<p>Overall, the event was a success in that it helped participants reflect on the topic of risk perception while providing training on data wrangling and visualization skills. We are very happy to have received some positive testimonials from a number of participants!</p>
 <p>“I really liked the close group collaboration and the fact that we had experienced team members who could help us.”</p>
 <p>“I learned a lot as a R Novice thanks to the instructors’ guidance”</p>
-<p>It’s a cool idea to split in different groups with one dataset and the same task. As in the end, we have different outcomes of visualizations and insights.</p>
+<p>“It’s a cool idea to split in different groups with one dataset and the same task. As in the end, we have different outcomes of visualizations and insights.”</p>
 <p>“the pizza was great :))”</p>
 <h1 id="references">References</h1>
 <p>Bhatia, S. (2019). Predicting risk perception: New insights from data science. Management Science, 65(8), 3800–3823. <a href="https://doi.org/10.1287/mnsc.2018.3121" class="uri">https://doi.org/10.1287/mnsc.2018.3121</a></p>
