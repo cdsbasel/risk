@@ -38,6 +38,10 @@ require(ggrepel)
 library(ggside)
 library(fmsb)
 library(patchwork)
+library(ggplot2)
+library(ggpubr)
+library(ggcorrplot)
+library(ggridges)
 
 risk = read_csv("risk_hackathon.csv")
 cols = viridis::cividis(5,end=.9)
@@ -318,7 +322,20 @@ dat %>%
 The groups were asked to compare the results of different prediction models. As it stands, the new models do not seem to beat the psychometric paradigm. This suggests that the features identified by Fischhoff and colleagues are important predictors of risk perception. It will be interesting to assess to what extent future, more sophisticated embeddings and ensemble models are able to beat this classical model from the psychology of risk perception. 
 
 ```{r}
+risk_data <- risk
+predict_data <- risk_data %>%
+  select(risk_ratings, cluster, psych_pred_risk, glove_pred_risk, swow_pred_risk)  %>%
+  pivot_longer(cols=c("psych_pred_risk", "glove_pred_risk", "swow_pred_risk"), names_to = "model", values_to = "predictions")
 
+predict_data %>%
+  ggplot(aes(x=risk_ratings, y=predictions, colour=model, legend())) +
+  geom_point(alpha=0.3) +
+  geom_smooth(method = "lm", se = TRUE) +
+  scale_colour_viridis_d() +
+  theme_bw() +
+  facet_wrap(~model)+
+  stat_cor(aes(label = ..r.label..), digits = 2, color="black") +
+  theme(axis.title = element_text(face = "bold"), legend.position = "none")
 ```
 
 # Limitations and Future Directions
