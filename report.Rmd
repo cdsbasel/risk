@@ -317,6 +317,9 @@ dat %>%
 
 The groups were asked to compare the results of different prediction models. As it stands, the new models do not seem to beat the psychometric paradigm. This suggests that the features identified by Fischhoff and colleagues are important predictors of risk perception. It will be interesting to assess to what extent future, more sophisticated embeddings and ensemble models are able to beat this classical model from the psychology of risk perception. 
 
+```{r}
+
+```
 
 # Limitations and Future Directions
 
@@ -338,6 +341,12 @@ Overall, the event was a success in that it helped participants reflect on the t
 "It's a cool idea to split in different groups with one dataset and the same task. As in the end, we have different outcomes of visualizations and insights."
 
 "the pizza was great :))"
+
+
+```{r, echo = FALSE, message=FALSE, fig.cap='Intro/Conclusion Presentation', fig.align='center', out.width='500', out.height='281'}
+knitr::include_graphics("presentation.pdf")
+```
+
 
 # References
 
